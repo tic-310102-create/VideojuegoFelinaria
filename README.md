@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mi Recetario 🍳
 
 App de recetas hecha con React + Vite. Las recetas son estáticas (están en `src/data/recetas.js`), sin base de datos.
@@ -19,3 +20,6 @@ git branch -M main
 git remote add origin https://github.com/TU-USUARIO/TU-REPO.git
 git push -u origin main
 ```
+=======
+# VideojuegoFelinaria
+>>>>>>> ca446cb631fbe057916688b9afa1cfb149a620d5
