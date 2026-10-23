@@ -1,0 +1,391 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  background: #33180f;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 4px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* ---------- Inicio ---------- */
+
+.inicio {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #33180f;
+  color: #ffe3ee;
+}
+
+.inicio-texto {
+  padding: clamp(1.5rem, 5vw, 4rem);
+  padding-bottom: 2rem;
+  animation: entra 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.inicio-saludo {
+  margin: 0 0 1rem;
+  font-style: italic;
+}
+
+.inicio-titulo {
+  margin: 0;
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-size: clamp(4rem, 17vw, 14rem);
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  color: #f5c33b;
+}
+
+.inicio-desc {
+  max-width: 38ch;
+  margin: 1.75rem 0;
+  font-size: 1.25rem;
+}
+
+.inicio-cta {
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.15rem;
+  padding: 0.9rem 1.9rem;
+  border-radius: 999px;
+  background: #f2548d;
+  color: #33180f;
+  transition: transform 0.2s ease;
+}
+
+.inicio-cta:hover {
+  transform: scale(1.05);
+}
+
+.inicio-tiras {
+  display: flex;
+  height: clamp(5rem, 14vh, 9rem);
+}
+
+.tira {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+  background: var(--fondo);
+  color: var(--acento);
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: clamp(1rem, 3vw, 2rem);
+}
+
+@keyframes entra {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Portada: dos paneles ---------- */
+
+.portada {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  background: var(--fondo);
+  color: var(--tinta);
+  transition: flex 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+}
+
+.panel:hover,
+.panel:focus-visible {
+  flex: 1.4;
+}
+
+.a-inicio {
+  position: absolute;
+  top: clamp(1rem, 3vw, 2rem);
+  left: clamp(1rem, 3vw, 2rem);
+  z-index: 2;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  background: #fff1d6;
+  color: #33180f;
+}
+
+.panel-meta {
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.panel-nombre {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: clamp(3.2rem, 9vw, 8.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--acento);
+  overflow-wrap: anywhere;
+}
+
+.panel-desc {
+  max-width: 34ch;
+}
+
+.panel-cta {
+  align-self: flex-start;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  background: var(--acento);
+  color: var(--fondo);
+}
+
+/* ---------- Receta abierta ---------- */
+
+.receta {
+  min-height: 100vh;
+  background: var(--fondo);
+  color: var(--tinta);
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+.volver {
+  background: none;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.volver:hover {
+  background: var(--tinta);
+  color: var(--fondo);
+}
+
+.receta-cabeza {
+  margin: clamp(2rem, 6vw, 4.5rem) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.receta-imagen svg,
+.receta-imagen .foto {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.receta-imagen .foto {
+  border-radius: 24px;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.receta-cabeza h1 {
+  margin: 0;
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 11vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--acento);
+  overflow-wrap: anywhere;
+}
+
+.receta-intro {
+  max-width: 44ch;
+  margin: 1.5rem 0 0;
+  font-size: 1.3rem;
+}
+
+.datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2.5rem;
+  margin: 2rem 0 0;
+}
+
+.datos div {
+  display: flex;
+  flex-direction: column;
+}
+
+.datos dt {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.datos dd {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.receta-cuerpo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.receta h2 {
+  margin: 0 0 0.5rem;
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+/* Lista del mandado: se tacha como una lista de papel */
+.mandado {
+  background: var(--tinta);
+  color: var(--fondo);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: 6px;
+  transform: rotate(-0.8deg);
+}
+
+.mandado-resumen {
+  margin: 0 0 1rem;
+  font-style: italic;
+}
+
+.mandado ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mandado li + li {
+  border-top: 1px dashed color-mix(in srgb, var(--fondo) 40%, transparent);
+}
+
+.mandado label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.7rem 0;
+  cursor: pointer;
+}
+
+.mandado input {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.3rem;
+  flex: none;
+  accent-color: var(--fondo);
+}
+
+.mandado .listo span {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  opacity: 0.55;
+}
+
+/* Pasos: sí son una secuencia, por eso van numerados */
+.pasos ol {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.75rem;
+}
+
+.pasos li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.num {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 4rem;
+  line-height: 0.9;
+  color: var(--acento);
+}
+
+.pasos p {
+  margin: 0.2rem 0 0;
+  max-width: 52ch;
+}
+
+/* ---------- Móvil ---------- */
+
+@media (max-width: 760px) {
+  .portada {
+    flex-direction: column;
+  }
+  .panel {
+    min-height: 50vh;
+    min-height: 50dvh;
+  }
+  .panel:hover,
+  .panel:focus-visible {
+    flex: 1;
+  }
+  .receta-cuerpo,
+  .receta-cabeza {
+    grid-template-columns: 1fr;
+  }
+  .receta-imagen {
+    order: -1;
+    max-width: 22rem;
+  }
+  .pasos li {
+    grid-template-columns: 3.2rem 1fr;
+  }
+  .num {
+    font-size: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .inicio-cta {
+    transition: none;
+  }
+  .inicio-texto {
+    animation: none;
+  }
+}
