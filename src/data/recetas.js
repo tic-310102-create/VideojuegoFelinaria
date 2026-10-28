@@ -1,7 +1,11 @@
+import tacosFoto from "../assets/tacos-al-pastor.jpg";
+import pastelFoto from "../assets/pastel-de-chocolate.jpg";
+
 const recetas = [
   {
     id: "tacos-al-pastor",
     nombre: "Tacos al Pastor",
+    foto: tacosFoto,
     emoji: "🌮",
     categoria: "Plato fuerte",
     tiempo: "45 min",
@@ -35,6 +39,7 @@ const recetas = [
   {
     id: "pastel-de-chocolate",
     nombre: "Pastel de Chocolate",
+    foto: pastelFoto,
     emoji: "🍫",
     categoria: "Postre",
     tiempo: "1 h 10 min",
